@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "CodeLedger",
+  "version": "1.0",
+
+  "description": "Streamlines solving on Codeforces: formatted filenames for your solutions archive and remembered filters.",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "codeledger@bobby",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "host_permissions": ["*://*.codeforces.com/*"],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.codeforces.com/*"],
+      "js": [
+        "src/features/copy-button/copy-button.js",
+        "src/features/question-parser/question-parser.js",
+        "src/features/filter-lock/filter-lock.js",
+        "src/core/main.js"
+      ],
+      "css": ["src/features/question-parser/question-parser.css"]
+    }
+  ]
+}
