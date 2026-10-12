@@ -1,0 +1,2 @@
+addCopyButton();
+lockFilters();
