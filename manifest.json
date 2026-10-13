@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "CodeLedger",
-  "version": "1.0",
+  "version": "1.1",
 
-  "description": "Streamlines solving on Codeforces: formatted filenames for your solutions archive and remembered filters.",
+  "description": "Copies formatted solution filenames on Codeforces and LeetCode, and remembers your Codeforces submission filters.",
 
   "browser_specific_settings": {
     "gecko": {
@@ -14,18 +14,19 @@
     }
   },
 
-  "host_permissions": ["*://*.codeforces.com/*"],
+  "host_permissions": ["*://*.codeforces.com/*", "*://*.leetcode.com/*"],
 
   "content_scripts": [
     {
-      "matches": ["*://*.codeforces.com/*"],
+      "matches": ["*://*.codeforces.com/*", "*://*.leetcode.com/*"],
       "js": [
         "src/features/copy-button/copy-button.js",
-        "src/features/question-parser/question-parser.js",
-        "src/features/filter-lock/filter-lock.js",
+        "src/features/question-parser/codeforces/question-parser-cf.js",
+        "src/features/question-parser/codeforces/filter-lock.js",
+        "src/features/question-parser/leetcode/question-parser-lc.js",
         "src/core/main.js"
       ],
-      "css": ["src/features/question-parser/question-parser.css"]
+      "css": ["src/features/copy-button/copy-button.css"]
     }
   ]
 }
