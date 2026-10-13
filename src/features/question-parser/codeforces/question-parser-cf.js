@@ -19,9 +19,9 @@ function parseContest(contestId) {
     return { contestName: link.textContent.replace(/[^A-Za-z0-9]/g, "") };
 }
 
-function addCopyButton() {
+function addCopyButtonCF() {
     const container = document.createElement("div");
-    container.className = "codeledger-buttons";
+    container.className = "codeledger-buttons codeledger-buttons-cf";
 
     const question = parseQuestion();
     if (!question) return;
