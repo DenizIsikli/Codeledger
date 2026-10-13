@@ -1,0 +1,105 @@
+.codeledger-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 4px;
+}
+
+.codeledger-buttons-lc {
+  align-items: flex-start;
+  margin: 4px 0 8px;
+}
+
+.codeledger-copy {
+  position: relative;
+  overflow: hidden;
+  appearance: none;
+  margin: 0;
+  padding: 2px 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit !important;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+
+  background: linear-gradient(
+      color-mix(in srgb, currentColor 30%, transparent),
+      color-mix(in srgb, currentColor 30%, transparent)
+    )
+    left bottom / 100% 1px no-repeat;
+}
+
+.codeledger-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.codeledger-copy:hover::before {
+  transform: scaleX(1);
+}
+
+.codeledger-copy:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.codeledger-copy::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 40%;
+  background: currentColor;
+  transform: skewX(-25deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.codeledger-copy.copied::after {
+  animation: codeledger-wave 0.6s ease-out;
+}
+
+@keyframes codeledger-wave {
+  from {
+    left: -60%;
+    opacity: 0.18;
+  }
+  to {
+    left: 120%;
+    opacity: 0.18;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .codeledger-copy::before {
+    transition: none;
+  }
+
+  .codeledger-copy.copied::after {
+    animation: none;
+  }
+}
