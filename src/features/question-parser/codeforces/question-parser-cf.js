@@ -16,7 +16,7 @@ function parseContest(contestId) {
     const link = document.querySelector(`#sidebar a[href="/contest/${contestId}"]`);
     if (!link) return null;
 
-    return { contestName: link.textContent.replace(/[^A-Za-z0-9]/g, "") };
+    return { contestName: `${link.textContent.replace(/[^A-Za-z0-9]/g, "")}/` };
 }
 
 function addCopyButtonCF() {
