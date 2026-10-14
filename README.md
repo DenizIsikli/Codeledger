@@ -56,4 +56,3 @@ The release workflow signs the extension and publishes the `.xpi` on your fork's
 ## License
 
 MIT
-

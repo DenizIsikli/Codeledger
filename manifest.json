@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "CodeLedger",
-  "version": "1.1",
+  "version": "1.2",
 
   "description": "Copies formatted solution filenames on Codeforces and LeetCode, and remembers your Codeforces submission filters.",
 
