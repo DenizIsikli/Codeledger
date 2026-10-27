@@ -11,6 +11,21 @@
   margin: 4px 0 8px;
 }
 
+.codeledger-buttons-cses {
+  display: inline-flex;
+  margin: 0 0 0 16px;
+  vertical-align: middle;
+}
+
+.codeledger-buttons-cses .codeledger-copy {
+  border: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  padding: 2px 0 !important;
+  color: inherit !important;
+  font-weight: 600 !important;
+}
+
 .codeledger-copy {
   position: relative;
   overflow: hidden;

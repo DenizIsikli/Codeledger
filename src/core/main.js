@@ -6,6 +6,8 @@ function main() {
         lockFilters();
     } else if (host.endsWith("leetcode.com")) {
         addCopyButtonLC();
+    } else if (host.endsWith("cses.fi")) {
+        addCopyButtonCSES();
     }
 }
 
